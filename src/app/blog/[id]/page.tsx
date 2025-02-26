@@ -20,12 +20,14 @@ const PostDetail =  () => {
     if (!post) return <p>Yükleniyor...</p>;
 
     return (
-        <div className="flex flex-col w-1/2 mx-auto">
-            <h1 className="text-3xl font-semibold">{post.title}</h1>
-            <p className="text-gray-300 mt-4 whitespace-pre-line">{post.content}</p>
-            <p className="text-sm text-gray-400 mt-2">
-                Yayınlanma Tarihi: {new Date(post.date_posted).toLocaleString()}
-            </p>
+        <div className="scrollbar-custom overflow-y-scroll overflow-x-hidden scrollbar-thumb-blue-500 scrollbar-track-gray-100">
+            <div className="flex flex-col w-full m-4 sm:w-1/2 sm:mx-auto ">
+                <h1 className="text-3xl font-semibold">{post.title}</h1>
+                <p className="text-gray-300 mt-4 whitespace-pre-line">{post.content}</p>
+                <p className="text-sm text-gray-400 mt-2">
+                    Yayınlanma Tarihi: {new Date(post.date_posted).toLocaleString()}
+                </p>
+            </div>
         </div>
     );
 };

@@ -33,9 +33,11 @@ export default function Navbar() {
             {/* Mobil Menü */}
             {menuOpen && (
                 <div
-                    className={`fixed inset-0 bg-customDark opacity-100 flex flex-col items-center justify-center space-y-6 z-50 transition-opacity duration-500 ease-in-out transform ${
+                    className={`fixed inset-0 bg-customDark opacity-100 flex flex-col items-center justify-center space-y-6 z-50 transition-opacity duration-200 ease-in transform ${
                         menuOpen ? 'opacity-100 scale-100 animate-fadeIn' : 'opacity-0 scale-95 '
                     }`}
+                    style={{ animationDuration: menuOpen ? "100ms" : "1s" }}  // Özel süre ayarı
+
                 >
                     <button
                         className="absolute top-6 right-6 text-white"
