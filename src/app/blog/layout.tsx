@@ -1,6 +1,5 @@
 import type {Metadata} from "next";
 import "@/app/globals.css";
-import Navbar from "@/components/Navbar";
 import {Quicksand} from "next/font/google";
 import Layout from "@/components/layouts"
 

@@ -1,4 +1,3 @@
-import Blog from "@/app/blog/page";
 import Avatar from "@/components/Avatar"
 export default function HomePage() {
     return (

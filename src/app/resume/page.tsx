@@ -1,6 +1,6 @@
 export default function Resume() {
     return (
-        <div className="w-full h-screen scrollbar-custom overflow-y-scroll scrollbar-thumb-blue-500 scrollbar-track-gray-100 ">
+        <div className="w-full h-screen scrollbar-custom overflow-y-scroll overflow-x-hidden scrollbar-thumb-blue-500 scrollbar-track-gray-100 ">
             <div className="flex flex-col items-center w-full p-6">
                 <span className="text-4xl">Celil Akdemir</span>
                 <span className="text-xl text-[#ECECEC]">Backend Developer</span>
