@@ -11,7 +11,7 @@ export default function Post() {
     const [rotation, setRotation] = useState<{ [key: number]: { rotateX: number; rotateY: number } }>({});
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/posts/")
+        fetch("http://0.0.0.0:8000/api/posts/")
             .then((res) => res.json())
             .then((data) => {
                 setPosts(data);
