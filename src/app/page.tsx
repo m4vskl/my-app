@@ -1,4 +1,5 @@
 import Avatar from "@/components/Avatar";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -11,16 +12,16 @@ export default function Home() {
                         </span>
                         <div className="flex flex-col space-y-4">
                             <span className="text-2xl sm:text-3xl md:text-4xl my-auto mx-4 md:mx-10 transition duration-300 text-gray-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-                                <a href="/resume"> &gt; Resume</a>
+                                <Link href="/resume"> &gt; Resume</Link>
                             </span>
                             <span className="text-2xl sm:text-3xl md:text-4xl my-auto mx-4 md:mx-10 transition duration-300 text-gray-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-                                <a href="/blog"> &gt; Blog</a>
+                                <Link href="/blog"> &gt; Blog</Link>
                             </span>
                             <span className="text-2xl sm:text-3xl md:text-4xl my-auto mx-4 md:mx-10 transition duration-300 text-gray-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-                                <a href="/contact"> &gt; Contact</a>
+                                <Link href="/contact"> &gt; Contact</Link>
                             </span>
                             <span className="text-2xl sm:text-3xl md:text-4xl my-auto mx-4 md:mx-10 transition duration-300 text-gray-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-                                <a href="https://www.linkedin.com/in/celil-akdemir-568433258/" target="_blank" rel="noopener noreferrer"> &gt; Linkedin</a>
+                                <Link href="https://www.linkedin.com/in/celil-akdemir-568433258/" target="_blank" rel="noopener noreferrer"> &gt; Linkedin</Link>
                             </span>
                         </div>
                     </div>

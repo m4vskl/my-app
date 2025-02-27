@@ -1,19 +1,23 @@
-"use client"
-
+"use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
+type Post = {
+    id: number;
+    title: string;
+    content: string;
+    date_posted: string;
+};
+
 export default function Post() {
     const [loading, setLoading] = useState(true);
-    const [posts, setPosts] = useState([]);
-
-    // Mouse hareketleri için her post için ayrı rotayı tutmak
-    const [rotation, setRotation] = useState<{ [key: number]: { rotateX: number; rotateY: number } }>({});
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [rotation, setRotation] = useState<Record<number, { rotateX: number; rotateY: number }>>({});
 
     useEffect(() => {
         fetch("http://127.0.0.1:8000/api/posts/")
             .then((res) => res.json())
-            .then((data) => {
+            .then((data: Post[]) => {
                 setPosts(data);
                 setLoading(false);
             })
@@ -30,7 +34,6 @@ export default function Post() {
         const x = (clientX - left) / width - 0.5;
         const y = (clientY - top) / height - 0.5;
 
-        // Sadece ilgili postun rotasını güncelle
         setRotation((prev) => ({
             ...prev,
             [postId]: {
@@ -41,7 +44,6 @@ export default function Post() {
     };
 
     const handleMouseLeave = (postId: number) => {
-        // Mouse dışarı çıktığında ilgili postu sıfırla
         setRotation((prev) => ({
             ...prev,
             [postId]: {

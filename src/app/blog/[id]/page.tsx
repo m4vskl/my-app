@@ -2,17 +2,24 @@
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const PostDetail =  () => {
+type Post = {
+    id: number;
+    title: string;
+    content: string;
+    date_posted: string;
+};
+
+const PostDetail = () => {
     const pathName = usePathname();
     console.log(pathName);
     const _id = pathName.split("/").pop();
-    const [post, setPost] = useState(null);
+    const [post, setPost] = useState<Post | null>(null);
 
     useEffect(() => {
         if (_id) {
             fetch(`http://127.0.0.1:8000/api/posts/${_id}/`)
                 .then((res) => res.json())
-                .then((data) => setPost(data))
+                .then((data: Post) => setPost(data))
                 .catch((err) => console.error("Post getirilirken hata oluştu:", err));
         }
     }, [_id]);
@@ -25,7 +32,7 @@ const PostDetail =  () => {
                 <h1 className="text-3xl font-semibold">{post.title}</h1>
                 <p className="text-gray-300 mt-4 whitespace-pre-line">{post.content}</p>
                 <p className="text-sm text-gray-400 mt-2">
-                    Yayınlanma Tarihi: {new Date(post.date_posted).toLocaleString()}
+                    Yayınlanma Tarihi: {post.date_posted ? new Date(post.date_posted).toLocaleString() : "Bilinmiyor"}
                 </p>
             </div>
         </div>

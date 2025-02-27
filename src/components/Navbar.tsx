@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -14,11 +15,11 @@ export default function Navbar() {
 
             {/* Büyük Ekran Menüsü */}
             <div className="hidden md:flex w-full space-x-16 justify-center items-center text-xl">
-                <a href="/home" className="hover:scale-110 transition-transform duration-300">Home</a>
-                <a href="/about" className="hover:scale-110 transition-transform duration-300">About</a>
-                <a href="/blog" className="hover:scale-110 transition-transform duration-300">Blog</a>
-                <a href="/contact" className="hover:scale-110 transition-transform duration-300">Contact</a>
-                <a href="/resume" className="hover:scale-110 transition-transform duration-300">Resume</a>
+                <Link href="/home" className="hover:scale-110 transition-transform duration-300">Home</Link>
+                <Link href="/about" className="hover:scale-110 transition-transform duration-300">About</Link>
+                <Link href="/blog" className="hover:scale-110 transition-transform duration-300">Blog</Link>
+                <Link href="/contact" className="hover:scale-110 transition-transform duration-300">Contact</Link>
+                <Link href="/resume" className="hover:scale-110 transition-transform duration-300">Resume</Link>
             </div>
 
 
@@ -45,11 +46,11 @@ export default function Navbar() {
                     >
                         <X size={32}/>
                     </button>
-                    <a href="/home" className="text-2xl text-white hover:text-gray-300">Home</a>
-                    <a href="/about" className="text-2xl text-white hover:text-gray-300">About</a>
-                    <a href="/blog" className="text-2xl text-white hover:text-gray-300">Blog</a>
-                    <a href="/contact" className="text-2xl text-white hover:text-gray-300">Contact</a>
-                    <a href="/resume" className="text-2xl text-white hover:text-gray-300">Resume</a>
+                    <Link href="/home" className="text-2xl text-white hover:text-gray-300">Home</Link>
+                    <Link href="/about" className="text-2xl text-white hover:text-gray-300">About</Link>
+                    <Link href="/blog" className="text-2xl text-white hover:text-gray-300">Blog</Link>
+                    <Link href="/contact" className="text-2xl text-white hover:text-gray-300">Contact</Link>
+                    <Link href="/resume" className="text-2xl text-white hover:text-gray-300">Resume</Link>
                 </div>
 
             )}
