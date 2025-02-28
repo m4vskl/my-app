@@ -17,7 +17,7 @@ const PostDetail = () => {
 
     useEffect(() => {
         if (_id) {
-            fetch(`http://127.0.0.1:8000/api/posts/${_id}/`)
+            fetch(`http://213.145.94.248:8000/api/posts/${_id}/`)
                 .then((res) => res.json())
                 .then((data: Post) => setPost(data))
                 .catch((err) => console.error("Post getirilirken hata oluştu:", err));
